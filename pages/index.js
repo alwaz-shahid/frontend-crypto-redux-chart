@@ -1,65 +1,50 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react"
+import { useGetCryptosQuery } from "../services/cryptoApi"
+import { jsonApi, useGetUsersQuery } from "../services/jsonApi"
+import { useGetPokemonByNameQuery } from "../services/pokemon"
 
-export default function Home() {
+
+
+export default function HomePage() {
+  const { data, isFetching, error, isLoading, endpointName } = useGetCryptosQuery()
+  // const { data, isFetching, error, isLoading, endpointName } = useGetUsersQuery()
+  // const { data, error, isLoading, endpointName, isFetching } = useGetPokemonByNameQuery('bulbasaur')
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <section className='h-screen'>
+      {/* {error ?
+        (<>Oh no, there was an error</>) : isLoading ?
+          (<>Loading...</>) : user ?
+            (<>
+              <h3 className="bg-red-400">{user.species.name}</h3>
+              <img src={user.sprites.front_shiny} alt={user.species.name} />
+            </>) :
+            null} */}
+      {/* {error ?
+        (<>Oh no, there was an error --
+        {error.message}
+        </>) : isLoading ?
+          (<>Loading...</>) : data ?
+            (
+              data?.map(({ name, id, email }, i) => <>
+                <h1 className="p-2">{name}</h1>
+                <p className="p-2">{email}</p>
+                <hr/>
+              </>)
+            ) :
+            null} */}
+{JSON.stringify(error?.message)}
+{JSON.stringify(data)}
+    </section>
   )
+}
+
+
+
+
+export async function getStaticProps() {
+
+  return {
+    props: {},
+    revalidate: 1,
+  }
 }
