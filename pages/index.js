@@ -1,39 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import _ from "lodash";
+import { useDispatch, useSelector } from "react-redux"
+import { getCryptos, setCryptos } from "../app/features/cryptoSlice"
 import { useGetCryptosQuery } from "../services/cryptoApi"
-import { jsonApi, useGetUsersQuery } from "../services/jsonApi"
-import { useGetPokemonByNameQuery } from "../services/pokemon"
-
+import Home from "../components/layout/Home";
 
 
 export default function HomePage() {
-  const { data, isFetching, error, isLoading, endpointName } = useGetCryptosQuery()
-  // const { data, isFetching, error, isLoading, endpointName } = useGetUsersQuery()
-  // const { data, error, isLoading, endpointName, isFetching } = useGetPokemonByNameQuery('bulbasaur')
+  const { data, error, isLoading, endpointName } = useGetCryptosQuery()
+
+  const cryptos = useSelector(state => state.cryptos)
+  // console.log(cryptos)
+  const dispatch = useDispatch()
   return (
-    <section className='h-screen'>
-      {/* {error ?
-        (<>Oh no, there was an error</>) : isLoading ?
-          (<>Loading...</>) : user ?
-            (<>
-              <h3 className="bg-red-400">{user.species.name}</h3>
-              <img src={user.sprites.front_shiny} alt={user.species.name} />
-            </>) :
-            null} */}
-      {/* {error ?
-        (<>Oh no, there was an error --
-        {error.message}
-        </>) : isLoading ?
-          (<>Loading...</>) : data ?
-            (
-              data?.map(({ name, id, email }, i) => <>
-                <h1 className="p-2">{name}</h1>
-                <p className="p-2">{email}</p>
-                <hr/>
-              </>)
-            ) :
-            null} */}
-{JSON.stringify(error?.message)}
-{JSON.stringify(data)}
+    <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
+      <Home />
+{/* {JSON.stringify(cryptos?.cryptos?.data?.coins)} */}
     </section>
   )
 }

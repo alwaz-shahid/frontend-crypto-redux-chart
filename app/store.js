@@ -3,9 +3,11 @@ import { cryptoApi } from '../services/cryptoApi'
 import { jsonApi } from '../services/jsonApi'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { pokemonApi } from '../services/pokemon'
+import cryptoSlice from './features/cryptoSlice'
 const store = configureStore({
     reducer: {
         [cryptoApi.reducerPath]: cryptoApi.reducer,
+        cryptos: cryptoSlice
         // [jsonApi.reducerPath]: jsonApi.reducer,
         // [pokemonApi.reducerPath]: pokemonApi.reducer
 

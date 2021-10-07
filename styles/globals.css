@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Akronim&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
@@ -22,9 +21,9 @@ html,
 body {
   /* background: linear-gradient(-45deg, #FC5C7D, #6A82FB, #FC466B, #3F5EFB); */
   /* background: linear-gradient(-45deg, #fbc2eb, #a6c1ee, #fccb90, #e6dee9); */
-  background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+  /* background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%); */
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  /* animation: gradient 15s ease infinite; */
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -33,7 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  @apply font-poppins text-gray-900;
+  @apply font-poppins text-gray-50 bg-gradient-to-br from-indigo-50 via-indigo-300 to-blue-200;
 }
 h1,
 h2,
@@ -48,7 +47,7 @@ a,
 li {
   @apply cursor-pointer;
 }
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 0% 25%;
   }
@@ -64,7 +63,7 @@ li {
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
