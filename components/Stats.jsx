@@ -10,9 +10,9 @@ const Stat = ({ title, val }) => {
 
 const Stats = () => {
     const cryptos = useSelector(state => state.cryptos)
-    const [stats, setStats] = useState(cryptos?.cryptos?.data?.stats)
+    const [stats, setStats] = useState(cryptos?.data?.stats)
     return (
-        <div className=" w-11/12 mx-auto">
+        <div id="statsContainer" className=" w-11/12 mx-auto">
             <div className='flex justify-between'>
 
                 <h3 className="title-1">Global Crypto Stats</h3>

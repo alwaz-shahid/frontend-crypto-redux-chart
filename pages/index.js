@@ -8,10 +8,7 @@ import Home from "../components/layout/Home";
 
 export default function HomePage() {
   const { data, error, isLoading, endpointName } = useGetCryptosQuery()
-
   const cryptos = useSelector(state => state.cryptos)
-  // console.log(cryptos)
-  const dispatch = useDispatch()
   return (
     <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
       <Home />
