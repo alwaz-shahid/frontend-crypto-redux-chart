@@ -7,8 +7,8 @@ const cryptoSlice = createSlice({
     reducers: {
         setCryptos(state, action) {
             state.data = action.payload;
-            console.log(JSON.stringify(state.data));
-            console.log(action)
+            // console.log(JSON.stringify(state.data));
+            // console.log(action)
         },
         getCryptos(state, action) { state.cryptos }
     }
