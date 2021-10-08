@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
       <Home />
-{/* {JSON.stringify(cryptos?.cryptos?.data?.coins)} */}
+      {/* {JSON.stringify(cryptos?.cryptos?.data?.coins)} */}
     </section>
   )
 }

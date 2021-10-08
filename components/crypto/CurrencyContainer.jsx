@@ -4,26 +4,39 @@ import CryptoCurrencies from './CryptoCurrencies'
 
 
 const CurrencyContainer = () => {
-    const cryptos = useSelector(state => state.cryptos)
+    const cryptos = useSelector(state => state?.cryptos)
     const [allCoins, setAllCoins] = useState(cryptos?.cryptos?.data?.coins)
     const [showAll, setShowAll] = useState(false)
-
+    const [searchTerm, setSearchTerm] = useState("")
     let coinLimit = showAll ? 10000000 : 10;
 
     const toggle = React.useCallback(
-        () => { setShowAll(!showAll) },
+        () => {
+            setShowAll(!showAll)
+            setSearchTerm('')
+        },
         [showAll, setShowAll],
     );
     useEffect(() => {
-    }, [allCoins, showAll, toggle])
+        const filteredCoins = allCoins?.filter((coin) => coin?.name?.toLowerCase()?.includes(searchTerm?.toLowerCase()))
+        setAllCoins(filteredCoins)
+    }, [searchTerm])
+    useEffect(() => {
+        setAllCoins(cryptos?.cryptos?.data?.coins)
+    }, [showAll, toggle])
     return (
-        <section className="flex items-start flex-wrap justify-between w-11/12 mx-auto py-2">
-            <div className="min-w-full flex items-center justify-between">
-                <h3 className="text-indigo-600 pb-2 text-4xl font-semibold">
+        <section className="currency-container">
+            <div className="min-w-full flex-btw">
+                <h3 className="title-1">
                     {showAll ? "All" : "Top 10"} Crypto Curriencies</h3>
-                <button onClick={toggle}
-                    className="p-3 rounded-xl bg-indigo-400 text-center text-white hover:bg-indigo-500 animated">
-                    {showAll ? "Show Top 10" : "Show All "}</button>
+                <div>
+                    <input className="input-search" placeholder="Search Coin" value={searchTerm}
+                        onChange={(e) => { setShowAll(true); setSearchTerm(e.target.value); }} />
+                    <button onClick={toggle} className={`btn-show animated`}>
+                        {showAll ? "Show Top 10" : "Show All "}
+                    </button>
+
+                </div>
             </div>
             {allCoins?.slice(0, coinLimit)?.map((item, i) => <CryptoCurrencies
                 title={item?.name} imageUrl={item?.iconUrl} rank={item?.rank}

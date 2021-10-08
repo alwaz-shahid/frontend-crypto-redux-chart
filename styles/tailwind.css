@@ -1,0 +1,26 @@
+/* global */
+.center-v {
+  @apply flex items-center justify-center;
+}
+.flex-left {
+  @apply flex items-center;
+}
+.check {
+  @apply border-red-800 border-2;
+}
+.title-1 {
+  @apply text-indigo-600 text-4xl font-semibold pb-2;
+}
+.blink {
+  @apply text-indigo-600 font-semibold pb-2 hover:animate-pulse;
+}
+
+.flex-btw {
+  @apply flex items-center justify-between;
+}
+
+/* button */
+
+.btn-show {
+  @apply py-1 px-2 text-sm rounded-xl ml-2 bg-indigo-400 text-center text-white hover:bg-indigo-500 ;
+}

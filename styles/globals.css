@@ -79,7 +79,7 @@ li {
   scrollbar-width: none; /* Firefox */
 }
 .animated {
-  @apply transform transition-all ease-in-out duration-500;
+  @apply transform transition-all ease-in-out duration-300;
 }
 absCenter {
   position: absolute;

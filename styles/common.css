@@ -1,6 +1,0 @@
-.center-v {
-  @apply flex items-center justify-center;
-}
-.check {
-  @apply border-red-800 border-2 ; 
-}

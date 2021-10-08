@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import '../styles/common.css'
+import '../styles/components.css'
+import '../styles/tailwind.css'
 import store from "../app/store"
 import { Provider } from 'react-redux'
 import Layout from '../components/layout/Layout'

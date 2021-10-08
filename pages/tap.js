@@ -1,15 +1,16 @@
-import React, { useEffect } from "react"
-import PortfolioContainer from "../components/Portfolio/PortfolioContainer"
-
+import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 
 export default function HomePage() {
-    useEffect(() => { }, [])
+    const cryptos = useSelector(state => state.cryptos)
+    const [coin, setCoin] = useState(cryptos?.cryptos?.data?.coins[1])
+    useEffect(() => { }, [coin])
     return (
-        <section className='mx-auto h-screen m-5'>
-            <h1 className="text-2xl text-center text-indigo-600 underline">Hey let's ttry this component out! </h1>
-            <PortfolioContainer />
-
-
+        <section className='mx-auto w-4/6 overflow-scroll h-screen m-5 text-black'>
+            {Object.keys(coin).map(item => <span className="p-2">{item}</span>)}
+{/* {JSON.stringify(coin?.socials)} */}
+{JSON.stringify(coin?.name)}
+{JSON.stringify(coin?.description)}
         </section>
     )
 }
