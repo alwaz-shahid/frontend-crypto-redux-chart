@@ -18,9 +18,14 @@
 .flex-btw {
   @apply flex items-center justify-between;
 }
-
+.container-inner {
+  @apply w-11/12 mx-auto;
+}
+.container-page {
+  @apply min-h-screen w-full overflow-x-hidden overflow-y-scroll;
+}
 /* button */
 
 .btn-show {
-  @apply py-1 px-2 text-sm rounded-xl ml-2 bg-indigo-400 text-center text-white hover:bg-indigo-500 ;
+  @apply py-1 px-2 text-sm rounded-xl ml-2 bg-indigo-400 text-center text-white hover:bg-indigo-500;
 }

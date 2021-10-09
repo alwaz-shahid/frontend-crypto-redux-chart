@@ -4,7 +4,7 @@ module.exports = {
     local: "http://localhost:3000"
   },
   images: {
-    domains: ["res.cloudinary.com", "cloudinary.com", "cdn.coinranking.com", "localhost"],
+    domains: ["res.cloudinary.com", "cloudinary.com", "cdn.coinranking.com", "localhost","www.bing.com"],
     loader: 'default',
 
   },

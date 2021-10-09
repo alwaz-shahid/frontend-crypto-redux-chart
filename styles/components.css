@@ -40,3 +40,8 @@
   @apply w-[30%] p-4 m-2 space-y-2 rounded-xl hover:scale-105 hover:bg-indigo-400 filter drop-shadow-lg 
   overflow-hidden h-44 flex flex-col justify-evenly bg-indigo-500;
 }
+
+.news-card{
+  @apply min-w-full rounded-xl hover:translate-y-1  hover:shadow-md 
+  overflow-hidden min-h-[110px] bg-indigo-400
+}

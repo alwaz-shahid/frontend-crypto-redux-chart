@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from "react-redux"
+import { useGetCryptosQuery } from '../../services/cryptoApi'
+
 import CryptoCurrencies from './CryptoCurrencies'
 
 
 const CurrencyContainer = () => {
-    const cryptos = useSelector(state => state?.cryptos)
-    const [allCoins, setAllCoins] = useState(cryptos?.data?.coins)
+    const { data, error, isLoading, endpointName } = useGetCryptosQuery()
+    const [allCoins, setAllCoins] = useState(data?.data?.coins)
     const [showAll, setShowAll] = useState(false)
     const [searchTerm, setSearchTerm] = useState("")
     let coinLimit = showAll ? 10000000 : 10;
@@ -15,15 +16,15 @@ const CurrencyContainer = () => {
             setShowAll(!showAll)
             setSearchTerm('')
         },
-        [showAll, setShowAll],
+        [showAll,data, setShowAll],
     );
     useEffect(() => {
         const filteredCoins = allCoins?.filter((coin) => coin?.name?.toLowerCase()?.includes(searchTerm?.toLowerCase()))
         setAllCoins(filteredCoins)
     }, [searchTerm])
     useEffect(() => {
-        setAllCoins(cryptos?.data?.coins)
-    }, [showAll, toggle])
+        setAllCoins(data?.data?.coins)
+    }, [showAll,data, toggle])
     return (
         <section className="currency-container">
             <div className="min-w-full flex-btw">
