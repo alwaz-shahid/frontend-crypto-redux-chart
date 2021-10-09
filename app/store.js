@@ -3,11 +3,13 @@ import { cryptoApi } from '../services/cryptoApi'
 
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { newsApi } from '../services/NewsApi'
+import cryptoSlice from './features/cryptoSlice'
 
 const store = configureStore({
     reducer: {
         [cryptoApi.reducerPath]: cryptoApi.reducer,
         [newsApi.reducerPath]: newsApi.reducer,
+        cryptos: cryptoSlice
     },
     // Adding the api middleware enables caching, invalidation, polling,  // and other useful features of `rtk-query`.
 

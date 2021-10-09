@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import data from "../../utils/helpers/sampleCryptoData"
+import { data } from "../../utils/samples/cryptoSample"
 
 const cryptoSlice = createSlice({
     name: "cryptos",
