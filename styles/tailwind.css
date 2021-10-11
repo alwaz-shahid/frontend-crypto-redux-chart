@@ -29,3 +29,7 @@
 .btn-show {
   @apply py-1 px-2 text-sm rounded-xl ml-2 bg-indigo-400 text-center text-white hover:bg-indigo-500;
 }
+
+article > h3{
+  @apply text-indigo-600 text-2xl font-semibold py-2;
+}

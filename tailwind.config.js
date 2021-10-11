@@ -205,6 +205,7 @@ module.exports = {
       borderWidth: ['hover', 'focus'],
       borderColor: ['hover', 'focus'],
       borderStyle: ['hover', 'focus'],
+      space: ['hover', 'focus'],
     },
   },
   plugins: [],

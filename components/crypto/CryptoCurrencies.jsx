@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import millify from "millify"
 
-const CryptoCurrencies = ({ title, imageUrl, price, marketCap, dailyChange, rank, param }) => {
+const CryptoCurrencies = ({ title, imageUrl, price, marketCap, dailyChange, rank, id }) => {
     return (
-        <Link href={`/coin/${param}`}>
+        <Link href={`/coin/${id}`}>
             <div className="crypto-card-container animated">
                 <div className="flex-btw border-b-2 border-indigo-600 pb-2">
                     <h3 className="text-xl"><span className="coin-title">{rank}.</span> {title}.</h3>

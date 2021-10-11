@@ -17,6 +17,9 @@ export const cryptoApi = createApi({
         getCryptos: builder.query({
             query: () => createRequest("/coins")
         }),
+        getCrypto: builder.query({
+            query: (coinID) => createRequest(`/coin/${coinID}`)
+        }),
         getExchanges: builder.query({
             query: () => createRequest("/exchanges")
         }),
@@ -31,5 +34,5 @@ export const cryptoApi = createApi({
 
 // name same as the query function, redux-toolkit will make an nhook automatically
 export const {
-    useGetCryptosQuery, useGetExchangesQuery
+    useGetCryptosQuery, useGetExchangesQuery, useGetCryptoQuery
 } = cryptoApi

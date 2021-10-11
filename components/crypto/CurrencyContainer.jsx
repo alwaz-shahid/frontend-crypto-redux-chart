@@ -23,7 +23,7 @@ const CurrencyContainer = () => {
     }, [searchTerm])
     useEffect(() => {
         setAllCoins(cryptos?.data?.coins)
-    }, [showAll, toggle, cryptos])
+    }, [showAll, cryptos])
     return (
         <section className="currency-container">
             <div className="min-w-full flex-btw">
@@ -39,7 +39,7 @@ const CurrencyContainer = () => {
                 </div>
             </div>
             {allCoins?.slice(0, coinLimit)?.map((item, i) => <CryptoCurrencies
-                title={item?.name} imageUrl={item?.iconUrl} rank={item?.rank}
+                title={item?.name} id={item?.id} imageUrl={item?.iconUrl} rank={item?.rank}
                 marketCap={item?.marketCap} dailyChange={item?.change}
                 price={item?.price} key={i}
             />)}
