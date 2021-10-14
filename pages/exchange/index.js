@@ -10,6 +10,7 @@ export default function ExchangePage() {
   const dispatch = useDispatch()
   return (
     <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
+      <h1 className="title-1">Page under Development</h1>
      <CurrencyContainer/>
     </section>
   )

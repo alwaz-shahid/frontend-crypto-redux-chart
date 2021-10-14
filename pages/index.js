@@ -16,10 +16,10 @@ export default function HomePage() {
     if (!_.isEqual(data?.data, cryptos)) {
       dispatch(setCryptos(data?.data))
     }
-  }, [cryptos, data,])
+  }, [cryptos, data,isLoading])
   return (
     <section className='container-page no-scrollbar'>
-      {/* {JSON.stringify(cryptos)} */}
+      {/* {JSON.stringify(data)} */}
       <Home />
     </section>
   )

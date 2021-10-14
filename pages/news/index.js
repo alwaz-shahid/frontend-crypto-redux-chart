@@ -4,8 +4,9 @@ import NewsCard from '../../components/news/NewsCard'
 import { useGetNewsQuery } from '../../services/NewsApi'
 
 const newsIndex = () => {
-    const { data, error, isLoading } = useGetNewsQuery({ newsCategory: "Cryptocurrency", count: 100 })
+    const { data, error, isLoading, isFetching } = useGetNewsQuery({ newsCategory: "Cryptocurrency", count: 100 })
     useEffect(() => { }, [data, isLoading])
+    if (isFetching || isLoading) return <h1 className="title-1 animate-ping">Loading....</h1>;
     return (
         <div className='container-page no-scrollbar pt-4 pb-10'>
             <section className="container-inner flex items-start justify-between flex-wrap space-y-4 overflow-hidden">

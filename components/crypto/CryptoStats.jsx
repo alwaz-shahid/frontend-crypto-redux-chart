@@ -25,7 +25,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
     return (
         <div className="rounded-xl space-y-2 animated hover:bg-indigo-400 bg-indigo-500 p-3 flex flex-col justify-start items-center h-auto w-1/2 m-2">
             <div className="font-noto">
-                <h4 className="text-2xl font-semibold text-indigo-800">{title}</h4>
+                <h4 className="text-2xl font-semibold text-indigo-900">{title}</h4>
                 <p className="text-indigo-50 text-sm">{info}</p>
             </div>
             <div className=" divide-y-2 divide-indigo-600 min-w-full  flex flex-col items-center justify-center">
@@ -35,18 +35,18 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
             hover: animated">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
-                            <p className="text-indigo-800 font-semibold">{item?.title}</p>
+                            <p className="text-indigo-900 font-semibold">{item?.title}</p>
                         </div>
-                        <p className="flex items-center">{item?.value}</p>
+                        <p className="flex items-center font-semibold">{item?.value}</p>
                     </div>
                 ) : stats?.map((item, i) =>
                     <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50
         hover: animated">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
-                            <p className="text-indigo-800 font-semibold">{item?.title}</p>
+                            <p className="text-indigo-900 font-semibold">{item?.title}</p>
                         </div>
-                        <p className="flex items-center">{item?.value}</p>
+                        <p className="flex items-center font-semibold">{item?.value}</p>
                     </div>)}
             </div>
         </div>
