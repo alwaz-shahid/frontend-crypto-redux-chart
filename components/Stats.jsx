@@ -13,8 +13,8 @@ const Stat = ({ title, val }) => {
 
 const Stats = () => {
     const cryptos = useSelector(state => state?.cryptos)
-    const [allCoins, setAllCoins] = useState(cryptos?.coins)
-    const [stats, setStats] = useState(cryptos?.stats)
+    const [allCoins, setAllCoins] = useState(cryptos?.data?.coins)
+    const [stats, setStats] = useState(cryptos?.data?.stats)
     useEffect(() => { }, [allCoins, cryptos, stats])
 
     return (

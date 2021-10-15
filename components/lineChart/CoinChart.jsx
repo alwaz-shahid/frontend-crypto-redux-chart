@@ -46,7 +46,7 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
                     {coinHistory?.data?.change}%
                 </span></p>
                 <p className="">Coin Price: <span className="font-semibold">
-                    {coinprice}
+                    ${coinprice}
                 </span></p>
 
             </div>

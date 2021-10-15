@@ -32,7 +32,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
 
                 {coin && generic ? genericStats?.map((item, i) =>
                     <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50
-            hover: animated">
+            hover: animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
                             <p className="text-indigo-900 font-semibold">{item?.title}</p>
@@ -41,7 +41,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
                     </div>
                 ) : stats?.map((item, i) =>
                     <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50
-        hover: animated">
+        hover: animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
                             <p className="text-indigo-900 font-semibold">{item?.title}</p>

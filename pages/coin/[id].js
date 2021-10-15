@@ -9,16 +9,15 @@ import HTMLReactParser from 'html-react-parser';
 import Select from "react-select"
 import CoinChart from '../../components/lineChart/CoinChart'
 import millify from "millify"
-const statsTitle = {
-    statistics: { title: "", info: "" },
-}
+import LoadingSpinner from '../../components/loaders/LoadingSpinner'
+
 
 const coinIndex = () => {
     const router = useRouter()
     const q = router?.query
     const coinId = q.id
     const [timePeriod, setTimePeriod] = useState({
-        value: "7d", label: "3 Hours",
+        value: "24h", label: "24 Hours",
     })
     const { data, isLoading, error, isSuccess, isFetching } = useGetCryptoQuery(coinId)
     const { data: coinHistory, isLoading: historyLoading,
@@ -51,7 +50,7 @@ const coinIndex = () => {
             primary: '#7c3aed',
         },
     })
-    if (isFetching || isLoading) return <h1 className="title-1 animate-ping">Loading....</h1>;
+    if (isFetching || isLoading) return <LoadingSpinner/>;
     return (
         <section className='container-page no-scrollbar'>
             <div className="container-inner flex-col flex flex-wrap space-y-10 my-5">
@@ -65,17 +64,16 @@ const coinIndex = () => {
                     <CryptoStats coin={coin} title={`${coin?.name} Value Statistics`}
                         info={`An overview showing the statistics of ${coin?.name}, such as the base and quote currency, the rank, and trading volume`} />
                     <CryptoStats generic coin={coin} title="Other Stats Info"
-                        info={`An overview showing the statistics of ${coin?.name}, such as the base and quote currency, the rank, and trading volume.`} />
+                        info={`An overview showing the statistics of ${coin?.name}, such as the exchanges, markets and supplies.`} />
                 </div>
                 {!historyLoading && <div className="space-y-4 ">
-                <h3 className='title-1'>{coin?.name} - Price Chart</h3>
-                    <Select className="w-48 float-right my-5 rounded-xl text-indigo-800"
-                        onChange={setTimePeriod} options={timeOptions} placeholder="Select Duration" defaultValue="3h"
-                        theme={customTheme} />
-                    {/* period - {JSON.stringify(timePeriod)} */}
-                    {/* period - {JSON.stringify(historyError)} */}
-                    {/* period - {JSON.stringify(coinHistory)} */}
-                    {/* period - {timePeriod.label} */}
+                    <h3 className='title-1'>{coin?.name} - Price Chart</h3>
+                    <div className=" float-right">
+                        <Select className="w-48 my-5 rounded-xl text-indigo-800"
+                            onChange={setTimePeriod} options={timeOptions} placeholder="Select Duration" defaultValue="3h"
+                            theme={customTheme} />
+                        <p className="text-indigo-700">Time Span: {timePeriod.label}</p>
+                    </div>
                     <CoinChart coinHistory={coinHistory} coinName={coin?.name} coinprice={coin?.price && millify(coin?.price || 1)} />
                 </div>}
                 <div className="space-y-4">
@@ -86,10 +84,10 @@ const coinIndex = () => {
                             {coin?.description && HTMLReactParser(coin?.description)}
                         </article>
 
-                        <div className="w-1/5 sticky rounded-xl shadow bg-indigo-400 h-1/2 pb-2 divide-y-2 divide-indigo-500">
+                        <div className="w-1/5 sticky rounded-xl shadow-sm border-2 border-indigo-500 h-1/2 pb-7 divide-y-2 divide-indigo-500">
                             <h5 className="p-2 text-xl font-semibold divide-y-2 divide-indigo-600 text-indigo-800 text-center">Related Links</h5>
                             {coin?.links && coin?.links?.map((item, i) => <div key={i} className="text-semibold animated hover:bg-indigo-200 px-2">
-                                <div className="items-center text-sm text-indigo-800 py-1">
+                                <div className="items-center text-sm text-indigo-800 py-1 overflow-hidden whitespace-nowrap overflow-ellipsis">
                                     <a className="py-1 w-full" href={item?.url} rel="norefferer" target="_blank" >
                                         <p className="py-0.5 font-semibold">{item?.type?.toUpperCase()}</p>
                                         <p className="">@{item?.name}   </p>
@@ -109,15 +107,13 @@ const coinIndex = () => {
 export default coinIndex
 
 export async function getStaticPaths() {
-    const paths = data?.coins?.map(({ id }) => ({
+    const paths = data?.data?.coins?.map(({ id }) => ({
         params: { id: id?.toString() }
     }))
     return { paths, fallback: "blocking" };
 }
 export async function getStaticProps({ params }) {
     const { id } = params
-    console.log(id)
-
     return {
         props: {},
         revalidate: 100,

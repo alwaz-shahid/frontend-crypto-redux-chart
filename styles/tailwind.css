@@ -33,3 +33,6 @@
 article > h3{
   @apply text-indigo-600 text-2xl font-semibold py-2;
 }
+article a {
+  @apply text-indigo-600 underline font-noto font-bold;
+}

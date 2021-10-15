@@ -23,7 +23,7 @@ const CurrencyContainer = () => {
     }, [searchTerm])
     useEffect(() => {
         setAllCoins(cryptos?.data?.coins)
-    }, [showAll, cryptos])
+    }, [showAll, cryptos,allCoins])
     return (
         <section className="currency-container">
             <div className="min-w-full flex-btw">

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import LoadingBars from '../../components/loaders/LoadingBars'
+import LoadingSpinner from '../../components/loaders/LoadingSpinner'
 import NewsCard from '../../components/news/NewsCard'
 import { useGetNewsQuery } from '../../services/NewsApi'
 
 const newsIndex = () => {
     const { data, error, isLoading, isFetching } = useGetNewsQuery({ newsCategory: "Cryptocurrency", count: 100 })
     useEffect(() => { }, [data, isLoading])
-    if (isFetching || isLoading) return <h1 className="title-1 animate-ping">Loading....</h1>;
+    if (isFetching || isLoading) return <LoadingSpinner />
     return (
         <div className='container-page no-scrollbar pt-4 pb-10'>
             <section className="container-inner flex items-start justify-between flex-wrap space-y-4 overflow-hidden">
