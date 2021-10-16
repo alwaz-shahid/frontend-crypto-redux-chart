@@ -12,8 +12,8 @@ const store = configureStore({
         [cryptoApi.reducerPath]: cryptoApi.reducer,
         [newsApi.reducerPath]: newsApi.reducer,
         cryptos: cryptoSlice,
-        exchange:exchangeSlice,
-        market:marketSlice
+        exchange: exchangeSlice,
+        market: marketSlice
     },
     // Adding the api middleware enables caching, invalidation, polling,  // and other useful features of `rtk-query`.
 

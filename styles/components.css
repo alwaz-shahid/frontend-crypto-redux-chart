@@ -28,13 +28,13 @@
 
 /* crypto card */
 .coin-title {
-  @apply font-bold text-sm text-indigo-800;
+  @apply font-bold text-sm text-indigo-900;
 }
 .coin-info {
   @apply font-semibold text-sm;
 }
 .coin-info-title {
-  @apply text-indigo-800 font-noto text-base;
+  @apply text-indigo-900 font-noto text-base;
 }
 .crypto-card-container {
   @apply w-[30%] p-4 m-2 space-y-2 rounded-xl hover:scale-105 hover:bg-indigo-400 filter drop-shadow-lg 

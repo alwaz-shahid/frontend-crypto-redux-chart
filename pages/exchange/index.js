@@ -34,15 +34,8 @@ export default function ExchangePage() {
   }
 
   return (
-    <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
-      <div className="text-indigo-800 border-2 text-center font-semibold">
-        ref div rtest
-        <p onClick={handleClick}>click me</p>
-        <p onClick={handleClickTwo}>click me</p>
-        <div ref={ref} className="animated scale-0 bg-red-400" >
-          <h1 className="title-1">this is a modal</h1></div>
-          <Exchange/>
-      </div>
+    <section className='container-page no-scrollbar'>
+      <Exchange />
     </section>
   )
 }

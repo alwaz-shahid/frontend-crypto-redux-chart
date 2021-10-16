@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import ExchangeCard from '../exchange/ExchangeCard'
 
 const Exchange = () => {
+    const exchanges = useSelector(state => state.exchange)
+    useEffect(() => { }, [exchanges])
     return (
-        <div className=" w-full overflow-x-hidden overflow-y-scroll no-scrollbar 
-        flex items-center justify-center flex-col pt-4 space-y-4">
-            <ExchangeCard/>
+        <div className=" container-inner">
+            <div className="mx-auto flex justify-around items-start flex-wrap relative">
+
+            {exchanges?.data?.exchanges?.map((exchange, i) => <ExchangeCard key={i} data={exchange} />)}
+            </div>
         </div>
     )
 }

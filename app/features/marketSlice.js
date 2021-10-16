@@ -4,7 +4,7 @@ const marketSlice = createSlice({
     name: "market",
     initialState: data,
     reducers: {
-        setExchanges(state, action) {
+        setMarket(state, action) {
             state.data = action.payload;
             // console.log(JSON.stringify(state.data));
             // console.log(action)
@@ -13,7 +13,7 @@ const marketSlice = createSlice({
 })
 
 // console.log(marketSlice)
-export const {  setExchanges } = marketSlice.actions
+export const {  setMarket } = marketSlice.actions
 
 export default marketSlice.reducer
 // console.log(setExchanges({ id: 123, title: 'Hello World' }))
