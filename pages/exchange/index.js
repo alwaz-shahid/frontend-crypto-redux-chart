@@ -24,16 +24,22 @@ export default function ExchangePage() {
   }, [exchanges, data, isLoading])
 
   const handleClick = () => {
-    refNode.classList.remove('text-indigo-800')
-    refNode.classList.add('text-black')
-    alert(refNode.classList)
+    refNode.classList.remove('scale-0')
+    refNode.classList.add('scale-100')
+  }
+  const handleClickTwo = () => {
+    refNode.classList.remove('scale-100')
+    refNode.classList.add('scale-0')
   }
 
   return (
     <section className='min-h-screen w-full overflow-x-hidden overflow-y-scroll no-scrollbar'>
-      <div ref={ref} className="text-indigo-800 border-2 text-center font-semibold">
+      <div className="text-indigo-800 border-2 text-center font-semibold">
         ref div rtest
         <p onClick={handleClick}>click me</p>
+        <p onClick={handleClickTwo}>click me</p>
+        <div ref={ref} className="animated scale-0 bg-red-400" >
+          <h1 className="title-1">this is a modal</h1></div>
       </div>
     </section>
   )
