@@ -21,6 +21,8 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
                 fill: false,
                 backgroundColor: '#0071bd',
                 borderColor: '#7c3aed',
+                pointBackgroundColor:"#f6fcde",
+                tension: 0.8
             },
         ],
     };
