@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setExchanges } from "../../app/features/exchangeSlice"
 import CurrencyContainer from "../../components/crypto/CurrencyContainer";
 import { useGetExchangesQuery } from "../../services/cryptoApi";
+import Exchange from "../../components/layout/Exchange";
 
 
 export default function ExchangePage() {
@@ -40,6 +41,7 @@ export default function ExchangePage() {
         <p onClick={handleClickTwo}>click me</p>
         <div ref={ref} className="animated scale-0 bg-red-400" >
           <h1 className="title-1">this is a modal</h1></div>
+          <Exchange/>
       </div>
     </section>
   )
