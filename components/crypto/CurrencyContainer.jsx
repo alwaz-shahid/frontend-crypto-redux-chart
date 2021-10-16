@@ -29,7 +29,7 @@ const CurrencyContainer = () => {
             <div className="min-w-full flex-btw">
                 <h3 className="title-1">
                     {showAll ? "All" : "Top 10"} Crypto Curriencies</h3>
-                <div>
+                <div className="flex lg:block py-2 lg:py-0 justify-between items-center">
                     <input className="input-search" placeholder="Search Coin" value={searchTerm}
                         onChange={(e) => { setShowAll(true); setSearchTerm(e.target.value); }} />
                     <button onClick={toggle} className={`btn-show animated`}>

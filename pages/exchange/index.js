@@ -35,6 +35,7 @@ export default function ExchangePage() {
 
   return (
     <section className='container-page no-scrollbar'>
+    
       <Exchange />
     </section>
   )

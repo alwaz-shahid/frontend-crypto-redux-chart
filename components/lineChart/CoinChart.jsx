@@ -22,7 +22,6 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
                 backgroundColor: '#0071bd',
                 borderColor: '#7c3aed',
                 pointBackgroundColor:"#f6fcde",
-                tension: 0.8
             },
         ],
     };
@@ -33,6 +32,7 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
                 {
                     ticks: {
                         beginAtZero: true,
+                      
                     },
                 },
             ],
@@ -44,16 +44,16 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
 
             <div className="text-indigo-800 text-xl">
 
-                <p className=""> Price Change: <span className="font-semibold">
+                <p className="md:text-base text-sm"> Price Change: <span className="font-semibold">
                     {coinHistory?.data?.change}%
                 </span></p>
-                <p className="">Coin Price: <span className="font-semibold">
+                <p className="md:text-base text-sm">Coin Price: <span className="font-semibold">
                     ${coinprice}
                 </span></p>
 
             </div>
             {/* {JSON.stringify(coinHistory)} */}
-            <div>
+            <div className="">
                 <Line data={data} options={options} />
             </div>
         </div>

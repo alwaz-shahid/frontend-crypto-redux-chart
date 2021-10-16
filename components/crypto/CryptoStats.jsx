@@ -23,15 +23,15 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
         { title: 'Circulating Supply', value: `$ ${coin?.circulatingSupply && millify(coin?.circulatingSupply)}`, icon: InfoIcon },
     ];
     return (
-        <div className="rounded-xl space-y-2 animated hover:bg-indigo-400 bg-indigo-500 p-3 flex flex-col justify-start items-center h-auto w-1/2 m-2">
+        <div className="rounded-xl space-y-2 animated hover:bg-indigo-400 shadow-lg bg-indigo-500 p-3 flex flex-col justify-start items-center h-auto  lg:w-1/2 m-2">
             <div className="font-noto">
-                <h4 className="text-2xl font-semibold text-indigo-900">{title}</h4>
+                <h4 className="lg:text-2xl text-lg font-semibold text-indigo-900">{title}</h4>
                 <p className="text-indigo-50 text-sm">{info}</p>
             </div>
             <div className=" divide-y-2 divide-indigo-600 min-w-full  flex flex-col items-center justify-center">
 
                 {coin && generic ? genericStats?.map((item, i) =>
-                    <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50
+                    <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50 text-sm
             hover: animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
@@ -40,7 +40,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
                         <p className="flex items-center font-semibold">{item?.value}</p>
                     </div>
                 ) : stats?.map((item, i) =>
-                    <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50
+                    <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50 text-sm
         hover: animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>

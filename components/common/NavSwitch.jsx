@@ -2,15 +2,15 @@ import React from 'react'
 import NavLink from "./NavLink"
 
 function Nav({ title, icon }) {
-    return (<p className="flex-left space-x-1">{icon}
-        <span className="font-semibold">
+    return (<p className="lg:flex lg:items-center  space-x-1">{icon}
+        <span className="font-semibold lg:inline-block hidden">
             {title}
         </span>
     </p>)
 }
 const NavSwitch = () => {
     return (
-        <aside className="flex flex-col justify-items-center space-y-8 items-end mt-10">
+        <aside className="flex flex-row items-center justify-between lg:flex-col lg:justify-center lg:space-y-8 lg:items-end lg:mt-10">
             <NavLink href="/" exact className="animated flex items-center ">
                 <Nav title="Home"
                     icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -9,14 +9,14 @@
   @apply border-red-800 border-2;
 }
 .title-1 {
-  @apply text-indigo-600 text-4xl font-semibold pb-2;
+  @apply text-indigo-600 text-2xl lg:text-4xl font-semibold pb-2;
 }
 .blink {
   @apply text-indigo-600 font-semibold pb-2 hover:animate-pulse;
 }
 
 .flex-btw {
-  @apply flex items-center justify-between;
+  @apply flex lg:items-center lg:flex-row lg:justify-between flex-col;
 }
 .container-inner {
   @apply w-11/12 mx-auto;
@@ -31,7 +31,7 @@
 }
 
 article > h3{
-  @apply text-indigo-600 text-2xl font-semibold py-2;
+  @apply text-indigo-600 text-lg lg:text-2xl font-semibold py-2;
 }
 article a {
   @apply text-indigo-600 underline font-noto font-bold;

@@ -5,7 +5,7 @@ import parseTimeDate from '../../utils/parseTimeDate'
 const MarketInfo = ({ data }) => {
     const { volume, price, marketShare, sourceName, sourceIconUrl, rank, quoteSymbol, baseSymbol,tickerQuoteVolume, tickerBaseVolume, tickerClose, tickerCreatedAt } = data
     return (
-        <div className="w-2/5  rounded-xl bg-indigo-500 text-indigo-900 p-3 m-5 shadow-lg animated hover:translate-y-1">
+        <div className="lg:w-2/5 sm:w-[47%] w-11/12  rounded-xl bg-indigo-500 text-indigo-900 p-3 m-5 shadow-lg animated hover:translate-y-1">
             <div className="flex justify-between items-center">
 
                 <p className="text-xl font-semibold text-white">
@@ -14,7 +14,7 @@ const MarketInfo = ({ data }) => {
                 <Image height={30} width={30} src={sourceIconUrl}
                     className="rounded-3xl bg-cover" />
             </div>
-            <div className="divide-y-2 divide-indigo-800 animated py-2">
+            <div className="lg:divide-y-2 divide-y-[1px] divide-indigo-800 animated py-2">
                 <p className="coin-info flex justify-between items-center p-2 text-white">
                     <span className="coin-info-title ">Quote Symbol: </span>{quoteSymbol}</p>
                 <p className="coin-info flex justify-between items-center p-2 text-white">

@@ -4,9 +4,9 @@ import { useSelector } from "react-redux"
 const Stat = ({ title, val }) => {
     useEffect(() => { }, [val, title])
     return (
-        <p className="w-1/2 text-gray-100">
-            <span className="font-noto font-semibold animated hover:underline">{title}</span> <br />
-            <span className="text-xl text-indigo-800 font-extrabold">{val && millify(val)}</span>
+        <p className="w-1/2 text-gray-100 md:px-0 px-2">
+            <span className="font-noto text-sm md:text-base font-semibold animated hover:underline">{title}</span> <br />
+            <span className="md:text-xl text-indigo-800 font-extrabold">{val && millify(val)}</span>
         </p>
     )
 }
@@ -19,9 +19,9 @@ const Stats = () => {
 
     return (
         <div className="container-inner">
-            <div className='flex justify-between'>
+            <div className='flex md:flex-row flex-col  md:justify-between w-full'>
                 <h3 className="title-1">Global Crypto Stats</h3>
-                <span className="blink">| Crypto Currency Tracker App</span>
+                <span className="blink md:text-base text-xs float-right">| Crypto Currency Tracker App</span>
             </div>
             <div className="stats-wrapper">
                 <Stat title="Total Crypto Currencies" val={stats?.total} />
