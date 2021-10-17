@@ -25,7 +25,7 @@ const marketsPage = () => {
         <div className="container-page no-scrollbar">
             {/* data/timne"   {moment(1634302276000).format("DD MMM YYYY hh:mm a")} */}
             <div className="mx-auto flex justify-around items-start flex-wrap relative">
-            <h6 className="title-1 pt-2">Crypto Markets</h6>
+            <h6 className="title-1 text-center py-2 min-w-full font-noto">Crypto Markets Overview</h6>
                 {market?.data?.markets?.map((item, i) => <MarketInfo data={item} key={i} />)}
             </div>
 

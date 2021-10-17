@@ -23,7 +23,8 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
         { title: 'Circulating Supply', value: `$ ${coin?.circulatingSupply && millify(coin?.circulatingSupply)}`, icon: InfoIcon },
     ];
     return (
-        <div className="rounded-xl space-y-2 animated hover:bg-indigo-400 shadow-lg bg-indigo-500 p-3 flex flex-col justify-start items-center h-auto  lg:w-1/2 m-2">
+        <div className="rounded-xl space-y-2 animated hover:bg-indigo-400 shadow-lg bg-indigo-500 p-3 flex flex-col
+         justify-start items-center h-auto  lg:w-1/2 lg:my-0 my-4 m-2">
             <div className="font-noto">
                 <h4 className="lg:text-2xl text-lg font-semibold text-indigo-900">{title}</h4>
                 <p className="text-indigo-50 text-sm">{info}</p>
@@ -32,7 +33,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
 
                 {coin && generic ? genericStats?.map((item, i) =>
                     <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50 text-sm
-            hover: animated hover:px-1">
+             animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
                             <p className="text-indigo-900 font-semibold">{item?.title}</p>
@@ -41,7 +42,7 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
                     </div>
                 ) : stats?.map((item, i) =>
                     <div key={i} className="flex items-end justify-between min-w-full space-y-4 text-indigo-50 text-sm
-        hover: animated hover:px-1">
+                    animated hover:px-1">
                         <div className="flex space-x-2 items-center">
                             <span className="text-indigo-900">{item?.icon}</span>
                             <p className="text-indigo-900 font-semibold">{item?.title}</p>
@@ -49,13 +50,6 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
                         <p className="flex items-center font-semibold">{item?.value}</p>
                     </div>)}
             </div>
-        </div>
-    )
-}
-export const GenericCryptoStats = () => {
-    return (
-        <div>
-
         </div>
     )
 }

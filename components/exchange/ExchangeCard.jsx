@@ -22,7 +22,8 @@ const ExchangeCard = ({ data }) => {
     }
 
     return (
-        <div className="lg:w-2/5 sm:w-[47%] w-11/12 rounded-xl bg-indigo-500 text-indigo-900 p-3 m-5 shadow-lg animated hover:translate-y-1">
+        <div className="lg:w-2/5 sm:w-[45%] w-11/12 rounded-xl bg-indigo-500 text-indigo-900 p-3 m-3 lg:m-5 
+        shadow-lg animated hover:translate-y-1">
             <div className="flex justify-between items-center">
 
                 <p className="text-xl font-semibold text-white">

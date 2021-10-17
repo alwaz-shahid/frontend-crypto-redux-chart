@@ -59,7 +59,7 @@ const coinIndex = () => {
                     <h1 className="title-1">{coin?.name} | {coin?.slug}</h1>
                     <p className="lg:text-xl text-sm text-indigo-700">{coin?.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
                 </div>
-                <div className="flex justify-start lg:justify-between lg:flex-row flex-col space-y-4">
+                <div className="flex justify-start lg:justify-between lg:flex-row flex-col">
 
                     <CryptoStats coin={coin} title={`${coin?.name} Value Statistics`}
                         info={`An overview showing the statistics of ${coin?.name}, such as the base and quote currency, the rank, and trading volume`} />
