@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import CurrencyContainer from '../../components/crypto/CurrencyContainer'
+import CurrencyContainer from '../../../components/crypto/CurrencyContainer'
 import { useRouter } from 'next/router'
-import { useGetCryptoHistoryQuery, useGetCryptoQuery, useGetCryptosQuery } from '../../services/cryptoApi'
-import { data } from '../../utils/samples/cryptoSample'
-import Coin from "../../components/crypto/Coin"
-import { CryptoStats } from '../../components/crypto/CryptoStats'
+import { useGetCryptoHistoryQuery, useGetCryptoQuery, useGetCryptosQuery } from '../../../services/cryptoApi'
+import { data } from '../../../utils/samples/cryptoSample'
+import Coin from "../../../components/crypto/Coin"
+import { CryptoStats } from '../../../components/crypto/CryptoStats'
 import HTMLReactParser from 'html-react-parser';
 import Select from "react-select"
-import CoinChart from '../../components/lineChart/CoinChart'
+import CoinChart from '../../../components/lineChart/CoinChart'
 import millify from "millify"
-import LoadingSpinner from '../../components/loaders/LoadingSpinner'
+import LoadingSpinner from '../../../components/loaders/LoadingSpinner'
 
 
 const coinIndex = () => {
