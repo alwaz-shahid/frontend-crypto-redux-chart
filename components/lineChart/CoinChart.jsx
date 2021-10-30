@@ -60,7 +60,7 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
     )
 }
 
-export default CoinChart
+export default React.memo(CoinChart)
    // const timeOptions = [
     //     {
     //         value: "3h", label: "3 Hours",

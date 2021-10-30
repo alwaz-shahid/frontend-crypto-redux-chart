@@ -6,7 +6,7 @@ import CurrencyContainer from "../../components/crypto/CurrencyContainer"
 export default function HomePage() {
 
   return (
-    <section className='container-page no-scrollbar'>
+    <section className='container-page no-scrollbar mb-24'>
    <CurrencyContainer/>
     </section>
   )

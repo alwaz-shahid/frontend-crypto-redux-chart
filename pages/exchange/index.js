@@ -2,13 +2,13 @@ import React, { useEffect, useState, useRef } from "react"
 import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux"
 import { setExchanges } from "../../app/features/exchangeSlice"
-import CurrencyContainer from "../../components/crypto/CurrencyContainer";
 import { useGetExchangesQuery } from "../../services/cryptoApi";
 import Exchange from "../../components/layout/Exchange";
+import LoadingSpinner from "../../components/loaders/LoadingSpinner";
 
 
 export default function ExchangePage() {
-  const { data, isLoading, isError } = useGetExchangesQuery()
+  const { data, isLoading, isFetching,isError } = useGetExchangesQuery()
   const exchanges = useSelector(state => state.exchange)
   const dispatch = useDispatch()
 
@@ -32,9 +32,9 @@ export default function ExchangePage() {
     refNode.classList.remove('scale-100')
     refNode.classList.add('scale-0')
   }
-
+  if (isFetching || isLoading) return <LoadingSpinner/>;
   return (
-    <section className='container-page no-scrollbar'>
+    <section className='container-page no-scrollbar mb-24'>
     
       <Exchange />
     </section>

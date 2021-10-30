@@ -22,7 +22,7 @@ const marketsPage = () => {
     }, [market, data, isLoading])
     if (isFetching || isLoading) return <LoadingSpinner />;
     return (
-        <div className="container-page no-scrollbar">
+        <div className="container-page no-scrollbar mb-24">
             {/* data/timne"   {moment(1634302276000).format("DD MMM YYYY hh:mm a")} */}
             <div className="mx-auto flex justify-around items-start flex-wrap relative">
             <h6 className="title-1 text-center py-2 min-w-full font-noto">Crypto Markets Overview</h6>

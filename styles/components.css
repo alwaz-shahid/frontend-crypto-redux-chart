@@ -43,5 +43,5 @@
 
 .news-card{
   @apply min-w-full rounded-xl hover:translate-y-1  hover:shadow-md 
-  overflow-hidden min-h-[110px] bg-indigo-400
+  overflow-hidden min-h-[110px] bg-indigo-500
 }

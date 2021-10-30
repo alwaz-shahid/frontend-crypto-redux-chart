@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import millify from "millify"
-import { CryptoStats } from './CryptoStats'
+import CryptoStats  from './CryptoStats'
 const Coin = ({ coin, coinHistory, coinId, loading }) => {
     const router = useRouter()
     const q = router?.query

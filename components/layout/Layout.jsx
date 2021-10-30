@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
             <section className="h-screen flex lg:flex-row flex-col lg:justify-between">
                 <Navbar />
                 {children}
-                <div className="h-20 mt-24 lg:hidden min-w-full"></div>
+                
             </section>
         </section>
     )

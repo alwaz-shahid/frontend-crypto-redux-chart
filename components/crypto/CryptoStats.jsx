@@ -7,7 +7,7 @@ import {
 } from '../common/Icons'
 
 
-export const CryptoStats = ({ title, coin, info, generic = false }) => {
+const CryptoStats = ({ title, coin, info, generic = false }) => {
     const stats = [
         { title: 'Price to USD', value: `$ ${coin?.price && millify(coin?.price || 1)}`, icon: DollarIcon },
         { title: 'Rank', value: coin?.rank, icon: NumberIcon },
@@ -54,3 +54,4 @@ export const CryptoStats = ({ title, coin, info, generic = false }) => {
     )
 }
 
+export default React.memo(CryptoStats)

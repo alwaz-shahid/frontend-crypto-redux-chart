@@ -39,4 +39,4 @@ const MarketInfo = ({ data }) => {
     )
 }
 
-export default MarketInfo
+export default React.memo(MarketInfo)

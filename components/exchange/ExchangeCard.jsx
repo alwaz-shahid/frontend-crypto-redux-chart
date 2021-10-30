@@ -55,7 +55,7 @@ const ExchangeCard = ({ data }) => {
     )
 }
 
-export default ExchangeCard
+export default React.memo(ExchangeCard)
 
 {/* <p className="title-1 mx-auto">I'm a paragraph</p>
 <button className="p-5 border-2" onClick={handleClick} >Click!</button>

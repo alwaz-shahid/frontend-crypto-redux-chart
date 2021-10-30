@@ -52,7 +52,7 @@ const coinIndex = () => {
     })
     if (isFetching || isLoading) return <LoadingSpinner/>;
     return (
-        <section className='container-page no-scrollbar'>
+        <section className='container-page no-scrollbar mb-24'>
             <div className="container-inner flex-col flex flex-wrap space-y-10 my-5">
                 <div>
 

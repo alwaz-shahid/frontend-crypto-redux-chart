@@ -8,4 +8,4 @@ const LoadingBars = ({len=6}) => {
     )
 }
 
-export default LoadingBars
+export default React.memo(LoadingBars)

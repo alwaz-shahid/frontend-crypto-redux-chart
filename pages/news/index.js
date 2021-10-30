@@ -9,7 +9,7 @@ const newsIndex = () => {
     useEffect(() => { }, [data, isLoading])
     if (isFetching || isLoading) return <LoadingSpinner />
     return (
-        <div className='container-page no-scrollbar pt-4 pb-10'>
+        <div className='container-page no-scrollbar pt-4 pb-10 mb-24'>
             <section className="container-inner flex items-start justify-between flex-wrap space-y-4 overflow-hidden">
                 {/* {JSON.stringify(data)} */}
                 <h1 className="title-1 block min-w-full">Crypto Currency News</h1>

@@ -19,7 +19,7 @@ const NewsCard = ({ title, urlPage, imgUrl, desc, datePublished }) => {
                         <span><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg></span></h3>
-                    <p className=" text-indigo-900  font-noto flex flex-1">Description: {desc}...</p>
+                    <p className=" text-indigo-50  font-noto flex flex-1">Description: {desc}...</p>
                     <span className="text-xs text-purple-100 place-self-end">{parseDate(datePublished)}</span>
                 </div>
             </div>
@@ -27,4 +27,4 @@ const NewsCard = ({ title, urlPage, imgUrl, desc, datePublished }) => {
     )
 }
 
-export default NewsCard
+export default React.memo(NewsCard)
