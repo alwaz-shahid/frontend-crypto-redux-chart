@@ -16,12 +16,18 @@ const CoinChart = ({ coinHistory, coinprice, coinName }) => {
         labels: coinTimestamp,
         datasets: [
             {
-                label: 'Price In USD',
+                label:"Price in USD",
                 data: coinPrice,
-                fill: false,
-                backgroundColor: '#0071bd',
+                fill: true,
+                backgroundColor: "rgba(124, 58, 237,0.2)",
+                // backgroundColor: '#fff',
+                // backgroundColor: '#0071bd',
                 borderColor: '#7c3aed',
+                // borderColor:"black",
+                clip: {left: 5, top: false, right: -2, bottom: 0},
                 pointBackgroundColor:"#f6fcde",
+                tension: 0.1,
+                pointRadius:0
             },
         ],
     };

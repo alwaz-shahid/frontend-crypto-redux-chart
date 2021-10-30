@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useGetCryptoHistoryQuery, useGetCryptoQuery, useGetCryptosQuery } from '../../../services/cryptoApi'
 import { data } from '../../../utils/samples/cryptoSample'
 import Coin from "../../../components/crypto/Coin"
-import { CryptoStats } from '../../../components/crypto/CryptoStats'
+import CryptoStats from '../../../components/crypto/CryptoStats'
 import HTMLReactParser from 'html-react-parser';
 import Select from "react-select"
 import CoinChart from '../../../components/lineChart/CoinChart'
@@ -52,7 +52,7 @@ const coinIndex = () => {
     })
     if (isFetching || isLoading) return <LoadingSpinner/>;
     return (
-        <section className='container-page no-scrollbar mb-24'>
+        <section className='container-page no-scrollbar pb-24'>
             <div className="container-inner flex-col flex flex-wrap space-y-10 my-5">
                 <div>
 

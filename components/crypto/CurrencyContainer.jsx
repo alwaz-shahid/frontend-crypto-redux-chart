@@ -6,7 +6,7 @@ import CryptoCurrencies from './CryptoCurrencies'
 const CurrencyContainer = () => {
     const cryptos = useSelector(state => state?.cryptos)
     const [allCoins, setAllCoins] = useState(cryptos?.data?.coins)
-    const [showAll, setShowAll] = useState(false)
+    const [showAll, setShowAll] = useState(true)
     const [searchTerm, setSearchTerm] = useState("")
     let coinLimit = showAll ? 10000000 : 10;
 
@@ -23,7 +23,7 @@ const CurrencyContainer = () => {
     }, [searchTerm])
     useEffect(() => {
         setAllCoins(cryptos?.data?.coins)
-    }, [showAll, cryptos,allCoins])
+    }, [showAll, cryptos])
     return (
         <section className="currency-container">
             <div className="min-w-full flex-btw">

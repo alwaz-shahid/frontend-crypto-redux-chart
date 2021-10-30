@@ -22,7 +22,7 @@ export default function HomePage() {
     }
   }, [cryptos, data, isLoading])
   return (
-    <section className='container-page no-scrollbar mb-24'>
+    <section className='container-page no-scrollbar'>
       {/* {JSON.stringify(cryptos)} */}
       <Home isLoading={isLoading} />
     </section>

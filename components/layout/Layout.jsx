@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         <section className="max-w-7xl min-h-screen mx-auto relative">
 
             <MobTitle />
-            <section className="h-screen flex lg:flex-row flex-col lg:justify-between">
+            <section className="h-screen flex lg:flex-row flex-col lg:justify-between ">
                 <Navbar />
                 {children}
                 

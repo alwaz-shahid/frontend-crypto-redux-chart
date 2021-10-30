@@ -34,7 +34,7 @@ export default function ExchangePage() {
   }
   if (isFetching || isLoading) return <LoadingSpinner/>;
   return (
-    <section className='container-page no-scrollbar mb-24'>
+    <section className='container-page no-scrollbar pb-24'>
     
       <Exchange />
     </section>
